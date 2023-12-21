@@ -10,6 +10,7 @@ import org.acme.models.Status;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Default;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @ApplicationScoped
@@ -17,6 +18,8 @@ import jakarta.inject.Named;
 @Named
 public class MaterielService {
 
+    @Inject
+    FlashMessageService flashMessage;
 
 
     String title = "Your Materiel";
@@ -78,6 +81,7 @@ public class MaterielService {
     public String createMateriel() {
         MaterielModel materielModel = new MaterielModel(this.title, this.description, this.contact, this.price, this.status);
         this.materiels.add(materielModel);
+        this.flashMessage.successMessage("Successfully created. Your " + this.title + " is now for sale for "+ this.price + " $", "success");
 
         return "sell";
     }
