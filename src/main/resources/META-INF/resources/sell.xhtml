@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+	<h:head>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+	</h:head>
+
+	<h:body>
+		<nav class="navbar navbar-expand-lg bg-dark p-3">
+			<div class="container-fluid">
+				<a class="navbar-brand text-light" href="#">Materiel App</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav nav-tabs me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<h:link
+								class="nav-link text-light"
+								outcome="index"
+								value="All Materiels"
+							/>
+						</li>
+						<li class="nav-item">
+							<h:link
+								class="nav-link text-light"
+								outcome="sell"
+								value="Sell Materiel"
+							/>
+						</li>
+						<div class="btn-group">
+							<button
+								type="button"
+								class="btn btn-secondary dropdown-toggle bg-dark border-0"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Condition filter
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end bg-dark">
+								<li>
+									<button class="dropdown-item bg-dark" type="button">
+										<h:link
+											class="nav-link text-light"
+											outcome="flawless"
+											value="Flawless Materiels"
+										/>
+									</button>
+								</li>
+								<li>
+									<button class="dropdown-item bg-dark" type="button">
+										<h:link
+											class="nav-link text-light"
+											outcome="bad"
+											value="Bad Materiels"
+										/>
+									</button>
+								</li>
+								<li>
+									<button class="dropdown-item bg-dark" type="button">
+										<h:link
+											class="nav-link text-light"
+											outcome="average"
+											value="Average Materiels"
+										/>
+									</button>
+								</li>
+								<li>
+									<button class="dropdown-item bg-dark" type="button">
+										<h:link
+											class="nav-link text-light"
+											outcome="good"
+											value="Good condition Materiels"
+										/>
+									</button>
+								</li>
+							</ul>
+						</div>
+					</ul>
+					<form class="d-flex" role="search">
+						<input
+							class="form-control me-2"
+							type="search"
+							placeholder="Search"
+							aria-label="Search"
+						/>
+						<button class="btn btn-outline-success" type="submit">
+							Search
+						</button>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<h2 class="text-center my-5">Sell</h2>
+
+		<h:form class="d-flex flex-column align-items-center">
+			<div class="col-md-3">
+				<label for="">Title</label>
+				<h:inputText
+					type="text"
+					placeholder="Materiel title"
+					class="form-control"
+					value="#{materielService.title}"
+				/>
+			</div>
+
+			<div class="col-md-3">
+				<label for="">Description</label>
+				<h:inputText
+					type="text"
+					class="form-control"
+					value="#{materielService.description}"
+				/>
+			</div>
+
+			<div class="col-md-3">
+				<label for="">Contact</label>
+				<h:inputText
+					type="text"
+					class="form-control"
+					value="#{materielService.contact}"
+				/>
+			</div>
+
+			<div class="col-md-3">
+				<label for="">Price</label>
+				<h:inputText
+					type="number"
+					class="form-control"
+					value="#{materielService.price}"
+				/>
+			</div>
+
+			<div class="col-md-3">
+				<label for="">Status</label>
+				<h:inputText
+					type="text"
+					placeholder="Materiel title"
+					class="form-control"
+					value="#{materielService.status}"
+				/>
+			</div>
+			<h:commandButton
+				action="#{materielService.createMateriel()}"
+				class="my-5 btn btn-success"
+				value="Add your materiel"
+			></h:commandButton>
+		</h:form>
+	</h:body>
+</html>
