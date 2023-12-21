@@ -1,6 +1,6 @@
 package org.acme.models;
 
-public class MaterielModel {
+public class MaterielModel implements MaterielInterface {
 
     String title;
     String description;
