@@ -122,7 +122,9 @@ public class MaterielService {
     public String deleteMateriel(MaterielModel materiel) {
         materiels.remove(materiel);
 
-
+        this.flashMessage.successMessage(
+                "Successfully deleted. Your " + this.title + " is now longer for sale", "success");
+ 
         return null;
     }
 
