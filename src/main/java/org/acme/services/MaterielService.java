@@ -26,6 +26,7 @@ public class MaterielService {
     Status status = Status.OK;
     List<MaterielModel> materiels = new ArrayList<MaterielModel>();
     List<MaterielModel> filteredFlawlessList = new ArrayList<MaterielModel>(Arrays.asList());
+    
 
 
  
@@ -61,7 +62,9 @@ public class MaterielService {
     }
 
     
-
+    public Status[] getStatusValues() {
+        return Status.values();
+    }
 
     public List<MaterielModel> getMateriels() {
         return materiels;
@@ -70,7 +73,6 @@ public class MaterielService {
     public void setMateriels(List<MaterielModel> materiels) {
         this.materiels = materiels;
     }
-
 
 
     public String createMateriel() {

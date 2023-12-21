@@ -153,14 +153,21 @@
 			</div>
 
 			<div class="col-md-3">
-				<label for="">Status</label>
-				<h:inputText
-					type="text"
-					placeholder="Materiel title"
+				<label for="status">Status</label>
+				<h:selectOneMenu
+					id="status"
 					class="form-control"
 					value="#{materielService.status}"
-				/>
+				>
+					<f:selectItems
+						value="#{materielService.statusValues}"
+						var="stat"
+						itemLabel="#{stat.label}"
+						itemValue="#{stat}"
+					/>
+				</h:selectOneMenu>
 			</div>
+
 			<h:commandButton
 				action="#{materielService.createMateriel()}"
 				class="my-5 btn btn-success"

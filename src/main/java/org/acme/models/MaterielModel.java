@@ -7,6 +7,7 @@ public class MaterielModel {
     String contact;
     int price;
     Status status;
+    
 
     public MaterielModel(String title, String description, String contact, int price, Status status) {
         this.title = title;
