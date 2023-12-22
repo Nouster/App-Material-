@@ -28,7 +28,7 @@ public class MaterielService {
     String contact = "06-XX-XX-XX-XX";
     int price = 0;
     Status status = Status.OK;
-    List<MaterielModel> materiels = new ArrayList<MaterielModel>();
+    public List<MaterielModel> materiels = new ArrayList<MaterielModel>();
     List<MaterielModel> filteredFlawlessList = new ArrayList<MaterielModel>(Arrays.asList());
     
 
@@ -87,6 +87,13 @@ public class MaterielService {
         return "sell";
     }
  
+      public MaterielModel createMaterielAPI() {
+                MaterielModel materielModel = new MaterielModel(this.title, this.description, this.contact, this.price, this.status);
+                this.materiels.add(materielModel);
+                return materielModel;
+
+       
+    }
  
     public List<MaterielModel> showFlawlessList() {
         this.filteredFlawlessList = this.materiels
@@ -125,9 +132,11 @@ public class MaterielService {
 
         this.flashMessage.successMessage(
                 "Successfully deleted. Your " + this.title + " is now longer for sale", "success");
- 
+
         return null;
     }
+    
+
 
 }
 
