@@ -158,7 +158,32 @@
 										<strong>Contact :</strong> ${materiel.contact}
 									</p>
 									<p class="card-link ms-0">
-										<strong>Status :</strong> ${materiel.status}
+										<c:choose>
+											<c:when test="${materiel.status == 'GOOD'}">
+												<strong>Status :</strong>
+												<span class="bg-success text-light p-1 rounded-3"
+													>${materiel.status}</span
+												>
+											</c:when>
+											<c:when test="${materiel.status == 'AVERAGE'}">
+												<strong>Status :</strong>
+												<span class="bg-warning text-light p-1 rounded-3"
+													>${materiel.status}</span
+												>
+											</c:when>
+											<c:when test="${materiel.status == 'BAD'}">
+												<strong>Status :</strong>
+												<span class="bg-danger text-light p-1 rounded-3"
+													>${materiel.status}</span
+												>
+											</c:when>
+											<c:when test="${materiel.status == 'OK'}">
+												<strong>Status :</strong>
+												<span class="bg-primary text-light p-1 rounded-3"
+													>${materiel.status}</span
+												>
+											</c:when>
+										</c:choose>
 									</p>
 									<p class="card-link ms-0">
 										<strong>Date :</strong> ${materiel.date}
