@@ -144,6 +144,17 @@
 									<p class="card-link ms-0">
 										<strong>Status :</strong> ${materiel.status}
 									</p>
+									<p class="card-link ms-0">
+										<strong>Date :</strong> ${materiel.date}
+									</p>
+									<h:form>
+										<h:commandButton
+											action="#{materielService.deleteMateriel(materiel)}"
+											class="my-5 btn btn-danger"
+											value="Delete materiel"
+										>
+										</h:commandButton>
+									</h:form>
 								</div>
 							</div>
 						</div>

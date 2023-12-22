@@ -1,5 +1,7 @@
 package org.acme.models;
 
+import java.sql.Date;
+
 public class MaterielModel implements MaterielInterface {
 
     String title;
@@ -7,6 +9,8 @@ public class MaterielModel implements MaterielInterface {
     String contact;
     int price;
     Status status;
+    long millis = System.currentTimeMillis();
+    Date date;
     
 
     public MaterielModel(String title, String description, String contact, int price, Status status) {
@@ -15,6 +19,7 @@ public class MaterielModel implements MaterielInterface {
         this.contact = contact;
         this.price = price;
         this.status = status;
+        this.date = new Date(millis);
     }
 
     public String getTitle() {
@@ -23,6 +28,14 @@ public class MaterielModel implements MaterielInterface {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public String getDescription() {
@@ -56,6 +69,8 @@ public class MaterielModel implements MaterielInterface {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+
 
     @Override
     public String toString() {

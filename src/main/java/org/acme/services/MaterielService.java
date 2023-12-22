@@ -22,6 +22,7 @@ public class MaterielService {
     FlashMessageService flashMessage;
 
 
+
     String title = "Your Materiel";
     String description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
     String contact = "06-XX-XX-XX-XX";
